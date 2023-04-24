@@ -8,11 +8,11 @@ export const Header = ({ keyActive }: HeaderProps) => {
   console.log(keyActive);
   return (
     <header className="tw-py-6">
-      <div className="tw-container tw-mx-auto tw-flex tw-justify-between tw-items-center">
+      <div className="tw-container tw-mx-auto tw-flex tw-flex-col md:tw-flex-row tw-justify-between tw-items-center">
         <div className="tw-w-16 tw-h-16 tw-rounded-full tw-bg-black tw-text-white tw-flex tw-justify-center tw-items-center tw-text-4xl">
           t.
         </div>
-        <nav>
+        <nav className="tw-mt-5 lg:tw-mt-0">
           <ul className="tw-flex tw-text-xl tw-space-x-[50px] tw-text-black/60 tw-leading-4">
             <li
               className={`${

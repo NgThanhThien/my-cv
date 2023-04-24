@@ -43,13 +43,13 @@ const HomePageLayout = () => {
           backgroundImage: 'url(/background.jpg)',
         }}
       >
-        <div className="tw-flex tw-h-full tw-w-[700px] tw-mx-auto tw-flex-col tw-space-y-5  tw-justify-center">
-          <div className="tw-text-[60px] tw-leading-[70px]">
+        <div className="tw-px-2 md:tw-px-0 tw-flex tw-h-full tw-w-[700px] tw-mx-auto tw-flex-col tw-space-y-5  tw-justify-center">
+          <div className="tw-text-[40px] md:tw-text-[60px] tw-leading-[50px] md:tw-leading-[70px]">
             Xin chào.
             <br />
             Mình tên là Thiên.
           </div>
-          <div className="tw-text-xl tw-leading-8 tw-text-black/60 tw-font-light">
+          <div className="tw-text-lg md:tw-text-xl tw-leading-6 md:tw-leading-8 tw-text-black/60 tw-font-light">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>

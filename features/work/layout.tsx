@@ -28,7 +28,7 @@ export const WorkPageLayout = () => {
           backgroundImage: 'url(/background.jpg)',
         }}
       >
-        <div className="tw-flex tw-h-full tw-w-[700px] tw-mx-auto tw-flex-col tw-space-y-5 tw-py-12">
+        <div className="tw-px-2 md:tw-px-0 tw-flex tw-h-full tw-max-w-[700px] tw-mx-auto tw-flex-col tw-space-y-5 tw-py-12">
           <ul className="tw-list-disc tw-space-y-4 tw-ps-5">
             {TIMELINES.map((t) => {
               return (
