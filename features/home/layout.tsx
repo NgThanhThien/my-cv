@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { PagePath } from '@/layout/shared';
 import { Meta } from '@/components/Meta';
+import { motion } from 'framer-motion';
 const HomePageLayout = () => {
   const Socials = [
     {
@@ -33,6 +34,12 @@ const HomePageLayout = () => {
       link: 'https://www.instagram.com/thien.nt95/',
     },
   ];
+  const spinTransition = {
+    // loop: Infinity,
+    repeat: Infinity,
+    duration: 1,
+    ease: 'linear',
+  };
   return (
     <>
       <Meta title="NgThanhThien" description="NgThanhThien" />
@@ -43,7 +50,20 @@ const HomePageLayout = () => {
           backgroundImage: 'url(/background.jpg)',
         }}
       >
-        <div className="tw-px-2 md:tw-px-0 tw-flex tw-h-full tw-w-[700px] tw-mx-auto tw-flex-col tw-space-y-5  tw-justify-center">
+        <div className="tw-relative tw-px-2 md:tw-px-0 tw-flex tw-h-full tw-w-[700px] tw-mx-auto tw-flex-col tw-space-y-5  tw-justify-center">
+          <div className="tw-absolute tw--top-20 tw-right-0">
+            <div className="tw-relative tw-w-full tw-h-full">
+              <div
+                className="tw-rounded-full tw-w-[200px] tw-h-[200px] tw-bg-center tw-bg-cover tw-z-10"
+                style={{ backgroundImage: 'url(/thien.jpg)' }}
+              ></div>
+              <motion.span
+                className="tw-block tw-w-full tw-h-full tw-rounded-full tw-border-[8px] tw-z-20 tw-bg-transparent tw-border-gray-300 tw-border-t-purple-500 tw-absolute tw-top-0 tw-left-0"
+                animate={{ rotate: 360 }}
+                transition={spinTransition}
+              ></motion.span>
+            </div>
+          </div>
           <div className="tw-text-[40px] md:tw-text-[60px] tw-leading-[50px] md:tw-leading-[70px]">
             Xin chào.
             <br />
