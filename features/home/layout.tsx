@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +8,8 @@ import {
   faLinkedin,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
+import { PagePath } from '@/layout/shared';
+import { Meta } from '@/components/Meta';
 const HomePageLayout = () => {
   const Socials = [
     {
@@ -34,12 +35,7 @@ const HomePageLayout = () => {
   ];
   return (
     <>
-      <Head>
-        <title>NgThanhThien</title>
-        <meta name="description" content="NgThanhThien" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Meta title="NgThanhThien" description="NgThanhThien" />
       <div
         className="tw-bg-cover tw-bg-no-repeat tw-flex tw-justify-center tw-items-center"
         style={{
@@ -57,7 +53,7 @@ const HomePageLayout = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
-          <Link href="/">
+          <Link href={PagePath.workPage}>
             <div className="tw-flex tw-items-center tw-space-x-2 tw-text-xl  tw-border-b-[2px] tw-border-black tw-border-dashed tw-w-max">
               <span>Check out my work</span>
               <FontAwesomeIcon className="tw-w-4" icon={faArrowRight} />
@@ -68,7 +64,7 @@ const HomePageLayout = () => {
             {Socials.map((social) => {
               return (
                 <li key={social.name}>
-                  <Link href={social.link}>
+                  <Link href={social.link} target="_blank">
                     <FontAwesomeIcon className="tw-w-10" icon={social.icon} />
                   </Link>
                 </li>

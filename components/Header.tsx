@@ -1,7 +1,11 @@
+import { PagePath } from '@/layout/shared';
 import Link from 'next/link';
 import React from 'react';
-
-export const Header = () => {
+type HeaderProps = {
+  keyActive: String;
+};
+export const Header = ({ keyActive }: HeaderProps) => {
+  console.log(keyActive);
   return (
     <header className="tw-py-6">
       <div className="tw-container tw-mx-auto tw-flex tw-justify-between tw-items-center">
@@ -9,15 +13,33 @@ export const Header = () => {
           t.
         </div>
         <nav>
-          <ul className="tw-flex tw-text-xl tw-space-x-[50px] tw-text-black/60">
-            <li className="tw-py-2 tw-px-[5px] tw-relative after:tw-absolute after:tw-w-0 after:tw-h-[2px] hover:after:tw-w-full after:tw-bg-black hover:tw-text-black after:tw-bottom-0 after:tw-left-0 after:tw-transform after:tw-duration-200 after:tw-ease-in-out">
+          <ul className="tw-flex tw-text-xl tw-space-x-[50px] tw-text-black/60 tw-leading-4">
+            <li
+              className={`${
+                keyActive === 'home'
+                  ? 'tw-text-black after:tw-bg-black after:tw-w-full'
+                  : 'after:tw-w-0 hover:tw-text-black'
+              } tw-py-2 tw-px-[5px] tw-relative after:tw-absolute after:tw-h-[2px] hover:after:tw-w-full after:tw-bg-black  after:tw-bottom-0 after:tw-left-0 after:tw-transform after:tw-duration-200 after:tw-ease-in-out`}
+            >
               <Link href={'/'}>About</Link>
             </li>
-            <li className="tw-py-2 tw-px-[5px] tw-relative after:tw-absolute after:tw-w-0 after:tw-h-[2px] hover:after:tw-w-full after:tw-bg-black hover:tw-text-black after:tw-bottom-0 after:tw-left-0 after:tw-transform after:tw-duration-200 after:tw-ease-in-out">
-              <Link href={'/'}>Work</Link>
+            <li
+              className={`${
+                keyActive === 'work'
+                  ? 'tw-text-black after:tw-bg-black after:tw-w-full'
+                  : 'after:tw-w-0 hover:tw-text-black'
+              } tw-py-2 tw-px-[5px] tw-relative after:tw-absolute after:tw-h-[2px] hover:after:tw-w-full after:tw-bg-black  after:tw-bottom-0 after:tw-left-0 after:tw-transform after:tw-duration-200 after:tw-ease-in-out`}
+            >
+              <Link href={PagePath.workPage}>Work</Link>
             </li>
-            <li className="tw-py-2 tw-px-[5px] tw-relative after:tw-absolute after:tw-w-0 after:tw-h-[2px] hover:after:tw-w-full after:tw-bg-black hover:tw-text-black after:tw-bottom-0 after:tw-left-0 after:tw-transform after:tw-duration-200 after:tw-ease-in-out">
-              <Link href={'/'}>Contact</Link>
+            <li
+              className={`${
+                keyActive === 'contact'
+                  ? 'tw-text-black after:tw-bg-black after:tw-w-full'
+                  : 'after:tw-w-0 hover:tw-text-black'
+              } tw-py-2 tw-px-[5px] tw-relative after:tw-absolute after:tw-h-[2px] hover:after:tw-w-full after:tw-bg-black  after:tw-bottom-0 after:tw-left-0 after:tw-transform after:tw-duration-200 after:tw-ease-in-out`}
+            >
+              <Link href={PagePath.contactPage}>Contact</Link>
             </li>
           </ul>
         </nav>
