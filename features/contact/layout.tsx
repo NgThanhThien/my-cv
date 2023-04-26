@@ -1,5 +1,5 @@
 import { Meta } from '@/components/Meta';
-import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -7,7 +7,7 @@ export const ContactPageLayout = () => {
   const contacts = [
     {
       key: 'phone',
-      icon: faPhoneAlt,
+      icon: faPhone,
       value: '0902-531-995',
     },
     {
@@ -35,7 +35,7 @@ export const ContactPageLayout = () => {
               return (
                 <li
                   key={contact.key}
-                  className="tw-flex tw-items-center tw-space-x-2 tw-text-xl md:tw-text-2xl"
+                  className="tw-flex tw-items-center tw-space-x-4 tw-text-xl md:tw-text-2xl"
                 >
                   <FontAwesomeIcon icon={contact.icon} className="tw-w-6" />
                   <span>{contact.value}</span>
